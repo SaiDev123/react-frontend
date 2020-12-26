@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import { bindActionCreators } from "redux";
-import {registerUser} from '../actions/register';
+import {registerUser} from '../actions/user';
 
 class Register extends React.Component{
 
@@ -28,6 +28,8 @@ class Register extends React.Component{
     }
 
       render(){
+
+        console.log('isUserLoggedIn -> reg comp', this.props.isUserLoggedIn);
           return(
 
             <div>
@@ -44,6 +46,8 @@ class Register extends React.Component{
                 EmailId: <input onChange={this.onInputChange} placeholder="enter emailId" type="text" name="emailId"></input><br></br>
 
                     <button>Submit</button>
+
+                    
                  
 
               </form>
@@ -57,4 +61,14 @@ function mapDispatchToProps(dispatch) {
     return bindActionCreators({registerUser:registerUser}, dispatch);
   }
 
-  export default connect(null,mapDispatchToProps)(Register)
+function mapStateToProps(appState){
+     console.log("MapStateto props");
+    console.log("appState",appState);
+
+    return {
+        isUserLoggedIn: appState.isUserLoggedIn
+    }
+
+}
+
+  export default connect(mapStateToProps,mapDispatchToProps)(Register)

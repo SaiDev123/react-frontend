@@ -13,3 +13,13 @@ export function registerUser(user){
         payload:promise
     }
 }
+export function loginUser(user){
+    console.log("inside",user);
+     let apiURL= `${BASE_URL}login`;
+     let promise=axios.post(apiURL,user);
+     console.log('promise',promise);
+         return {
+        type:"LOGIN",
+        payload:promise
+    }
+}
