@@ -2,6 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import { bindActionCreators } from "redux";
 import {loginUser} from '../actions/user';
+// import './login.css';
 
 class Login extends React.Component{
 
@@ -31,7 +32,7 @@ class Login extends React.Component{
           return(
 
             <div>
-
+                   <h1>Login here</h1>
               <form onSubmit={this.submitForm}>
 
               EmailId: <input onChange={this.onInputChange} placeholder="enter emailId" type="text" name="emailId"></input><br></br>
@@ -48,8 +49,6 @@ class Login extends React.Component{
       }
 
 }
-
-
 function mapDispatchToProps(dispatch) {
     return bindActionCreators({loginUser:loginUser}, dispatch);
   }

@@ -7,9 +7,9 @@ export default class App extends Component {
     return (
       <div>
 
-         {/* <Register/> */}
+         <Register/>
 
-         <Login/>
+         {/* <Login/> */}
 
       </div>
     );

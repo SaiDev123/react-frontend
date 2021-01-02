@@ -11,7 +11,8 @@ class Register extends React.Component{
          this.state={
              username: null,
              password: null,
-             emailId: null
+             emailId: null,
+             role:"customer"
          }
      }
      onInputChange = (event) => {
