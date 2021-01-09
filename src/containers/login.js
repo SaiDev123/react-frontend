@@ -11,7 +11,8 @@ class Login extends React.Component{
 
          this.state={
              password: null,
-             emailId: null
+             emailId: null,
+             role: 'customer'
          }
      }
      onInputChange = (event) => {
